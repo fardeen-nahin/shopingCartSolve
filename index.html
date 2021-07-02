@@ -100,6 +100,13 @@
          const phoneCount = getProductValue('phone');
          const total = caseCount * 59 + phoneCount * 1219;
          document.getElementById("Subtotal").innerText = total;
+
+         const tax = Math.round(total * 0.1);
+         document.getElementById("Tax").innerText = tax;
+
+         const grandTotal = total + tax;
+         document.getElementById("Total").innerText = grandTotal;
+         
       }
       function getProductValue(product) {
          const productInput = document.getElementById(product + "-count");
